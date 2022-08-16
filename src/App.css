@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'B-yekan';
+  src: url('../public/font/IRANSans/IRANSans.ttf');
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'B-yekan';
+}
+input::placeholder {
+  font-size: 10px !important;
+  direction: rtl;
+  text-align: end;
+}
+input:focus {
+  box-shadow: none !important;
+}
