@@ -1,0 +1,20 @@
+.login_page__container {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../../../public/images/background.svg');
+}
+.form_section__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8rem !important;
+  align-items: center;
+  margin: auto auto;
+}
+.login_button {
+  font-size: 12px !important;
+  width: 25% !important;
+  padding: 8px 0;
+}
