@@ -1,9 +1,10 @@
 import { Button, Card, Input, InputGroup, InputGroupText } from 'reactstrap'
+import { useEffect, useState } from 'react'
 
 import { FaUserAlt } from 'react-icons/fa'
 import { HiLockClosed } from 'react-icons/hi'
+import { LoginApi } from '../../api/authentication/loginApi'
 import styles from './auth.module.css'
-import { useState } from 'react'
 
 const Login = () => {
   const [loginData, setLoginData] = useState({
@@ -17,7 +18,19 @@ const Login = () => {
       [event.target.name]: value,
     })
   }
-  console.log(loginData)
+
+  const ResponseHandler = (res) => {
+    if (res.status === 200) {
+      console.log(res.data.access)
+      localStorage.setItem('access', res.data?.access)
+      localStorage.setItem('refresh', res.data?.refresh)
+    }
+  }
+  const submitButtonHandler = () => {
+    LoginApi(loginData)
+      .then((res) => ResponseHandler(res))
+      .catch((err) => console.log(err))
+  }
   return (
     <div className={styles.login_page__container}>
       <div className={styles.form_section__container}>
@@ -27,6 +40,7 @@ const Login = () => {
         <p>فرم ورود به ایرانیان پوشش</p>
         <InputGroup className='w-25 mt-4'>
           <Input
+            type='text'
             value={loginData.username}
             name='username'
             onChange={loginInputsChangeHandler}
@@ -38,6 +52,7 @@ const Login = () => {
         </InputGroup>
         <InputGroup className='w-25 mt-3'>
           <Input
+            type='password'
             value={loginData.password}
             name='password'
             onChange={loginInputsChangeHandler}
@@ -47,7 +62,11 @@ const Login = () => {
             <HiLockClosed color='#307aad' />
           </InputGroupText>
         </InputGroup>
-        <Button className={`${styles.login_button} mt-3`} color='primary'>
+        <Button
+          onClick={submitButtonHandler}
+          className={`${styles.login_button} mt-3`}
+          color='primary'
+        >
           ورود به سامانه
         </Button>
       </div>
