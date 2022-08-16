@@ -1,11 +1,11 @@
-import { Button, Card, Input, InputGroup, InputGroupText } from 'reactstrap'
-import { useEffect, useState } from 'react'
+import { Button, Input, InputGroup, InputGroupText } from 'reactstrap'
 
 import { FaUserAlt } from 'react-icons/fa'
 import { HiLockClosed } from 'react-icons/hi'
 import { LoginApi } from '../../api/authentication/loginApi'
 import styles from './auth.module.css'
 import { toast } from 'react-toastify'
+import { useState } from 'react'
 
 const Login = () => {
   const [loginData, setLoginData] = useState({

@@ -1,0 +1,36 @@
+.header__container {
+  padding: 0 60px;
+  direction: rtl !important;
+  display: flex;
+  flex-direction: row;
+}
+.header_menu_items {
+  list-style-type: none;
+  margin: 0 7px 0 20px;
+  border-top: 4px solid transparent;
+  padding-top: 20px;
+  cursor: pointer;
+}
+.selected_menu_icon {
+  border-top-width: 3px;
+  border-top: 4px solid #fcbc8e;
+  list-style-type: none;
+  margin: 0 7px 0 20px;
+  padding-top: 20px;
+  transition: all 0.9s;
+}
+li span svg {
+  color: #fa8735;
+}
+.selected_menu_item {
+  color: #fa8735;
+}
+.selected_icon svg {
+  color: #fa8735 !important;
+}
+.left_side__container {
+  margin-top: 5px;
+}
+.right_side__container {
+  display: flex;
+}
