@@ -16,3 +16,8 @@ input::placeholder {
 input:focus {
   box-shadow: none !important;
 }
+
+.Toastify__toast-body {
+  font-family: 'B-yekan';
+  font-size: 13px;
+}

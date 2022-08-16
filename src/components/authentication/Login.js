@@ -5,6 +5,7 @@ import { FaUserAlt } from 'react-icons/fa'
 import { HiLockClosed } from 'react-icons/hi'
 import { LoginApi } from '../../api/authentication/loginApi'
 import styles from './auth.module.css'
+import { toast } from 'react-toastify'
 
 const Login = () => {
   const [loginData, setLoginData] = useState({
@@ -21,7 +22,9 @@ const Login = () => {
 
   const ResponseHandler = (res) => {
     if (res.status === 200) {
-      console.log(res.data.access)
+      toast.success('با موفقیت وارد شدید', {
+        position: toast.POSITION.TOP_LEFT,
+      })
       localStorage.setItem('access', res.data?.access)
       localStorage.setItem('refresh', res.data?.refresh)
     }
@@ -29,7 +32,11 @@ const Login = () => {
   const submitButtonHandler = () => {
     LoginApi(loginData)
       .then((res) => ResponseHandler(res))
-      .catch((err) => console.log(err))
+      .catch((err) =>
+        toast.error('اطلاعات وارد شده معتبر نمی‌باشد', {
+          position: toast.POSITION.TOP_LEFT,
+        })
+      )
   }
   return (
     <div className={styles.login_page__container}>
@@ -40,7 +47,6 @@ const Login = () => {
         <p>فرم ورود به ایرانیان پوشش</p>
         <InputGroup className='w-25 mt-4'>
           <Input
-            type='text'
             value={loginData.username}
             name='username'
             onChange={loginInputsChangeHandler}
