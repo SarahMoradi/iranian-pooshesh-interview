@@ -5,3 +5,9 @@
   background-repeat: no-repeat;
   background-image: url('../../../public/images/background.png');
 }
+.option_list__container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}

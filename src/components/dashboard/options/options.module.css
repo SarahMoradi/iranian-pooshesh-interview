@@ -1,0 +1,41 @@
+.option_list__container {
+  direction: rtl;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.options_card__container {
+  border: none !important;
+  box-shadow: 0px 4px 0px 0px #efeeee40;
+}
+.light_pink__container {
+  width: 55px;
+  height: 55px;
+  background-color: #ede0e5;
+  border-radius: 20px;
+  box-shadow: 0px 8px 16px 0px #babec43d;
+}
+
+.light_purple__container {
+  width: 55px;
+  height: 55px;
+  background-color: #c7c8e5;
+  border-radius: 20px;
+  box-shadow: 0px 8px 16px 0px #babec43d;
+}
+
+.light_green__container {
+  width: 55px;
+  height: 55px;
+  background-color: #dce4cc;
+  border-radius: 20px;
+  box-shadow: 0px 8px 16px 0px #babec43d;
+}
+
+.light_orange__container {
+  width: 55px;
+  height: 55px;
+  background-color: #fdd9c0;
+  border-radius: 20px;
+  box-shadow: 0px 8px 16px 0px #babec43d;
+}
