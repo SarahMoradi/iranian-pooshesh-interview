@@ -2,6 +2,7 @@ import {
   Button,
   Card,
   Col,
+  FormFeedback,
   FormGroup,
   Input,
   InputGroup,
@@ -15,6 +16,7 @@ import { useEffect, useState } from 'react'
 import { IoArrowBackOutline } from 'react-icons/io5'
 import styles from './index.module.css'
 import { toast } from 'react-toastify'
+import { tr } from 'date-fns/locale'
 import { useNavigate } from 'react-router-dom'
 
 const VisitForm = () => {
@@ -40,6 +42,7 @@ const VisitForm = () => {
         console.error(error)
       })
   }, [])
+
   const submitFormHandler = () => {
     formApi(inputValues)
       .then((res) => {
@@ -76,6 +79,10 @@ const VisitForm = () => {
                   <FormGroup>
                     <Label for='branch'>شعبه ایرانیان پوشش*</Label>
                     <Input
+                      className={`${
+                        inputValues.branch === '' && styles.invalid_input
+                      }`}
+                      required
                       id='branch'
                       name='branch'
                       type='select'
@@ -96,6 +103,10 @@ const VisitForm = () => {
                   <FormGroup>
                     <Label for='adjuster'>کارشناس*</Label>
                     <Input
+                      className={`${
+                        inputValues.adjuster === '' && styles.invalid_input
+                      }`}
+                      required
                       id='adjuster'
                       name='adjuster'
                       type='select'
@@ -119,6 +130,13 @@ const VisitForm = () => {
                   <InputGroup size='sm' style={{ direction: 'ltr' }}>
                     <InputGroupText>ریال </InputGroupText>
                     <Input
+                      className={`${
+                        inputValues.amount_damages_assessed < 10000000 &&
+                        styles.invalid_input
+                      }`}
+                      required
+                      type='number'
+                      min={10000000}
                       pattern='[0-9]'
                       id='amount_damages_assessed'
                       name='amount_damages_assessed'
@@ -130,6 +148,10 @@ const VisitForm = () => {
                   <FormGroup>
                     <Label for='visit_date'>تاریخ*</Label>
                     <Input
+                      className={`${
+                        inputValues.visit_date === '' && styles.invalid_input
+                      }`}
+                      required
                       style={{ direction: 'rtl' }}
                       id='visit_date'
                       name='visit_date'
@@ -142,6 +164,10 @@ const VisitForm = () => {
                   <FormGroup>
                     <Label for='visit_time'>ساعت*</Label>
                     <Input
+                      className={`${
+                        inputValues.visit_date === '' && styles.invalid_input
+                      }`}
+                      required
                       id='visit_time'
                       name='visit_time'
                       type='time'
@@ -157,8 +183,16 @@ const VisitForm = () => {
                     مسافت رفت و برگشت طی شده*
                   </Label>
                   <InputGroup size='sm' style={{ direction: 'ltr' }}>
-                    <InputGroupText>km </InputGroupText>
+                    <InputGroupText>km</InputGroupText>
                     <Input
+                      className={`${
+                        inputValues.covered_distance > 30 &&
+                        styles.invalid_input
+                      }`}
+                      required
+                      max={30}
+                      type='number'
+                      pattern='[0-9]'
                       id='covered_distance'
                       name='covered_distance'
                       onChange={(event) => infoChangeInputsHandler(event)}
@@ -169,6 +203,10 @@ const VisitForm = () => {
                   <FormGroup>
                     <Label for='description'>توضیحات*</Label>
                     <Input
+                      className={`${
+                        inputValues.description === '' && styles.invalid_input
+                      }`}
+                      required
                       id='description'
                       name='description'
                       type='textarea'

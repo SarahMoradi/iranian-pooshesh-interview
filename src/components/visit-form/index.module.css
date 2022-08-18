@@ -23,3 +23,6 @@
 .back_button:hover {
   color: cornflowerblue;
 }
+.invalid_input {
+  border: 1px solid red !important;
+}
