@@ -2,9 +2,11 @@ import { BiExit } from 'react-icons/bi'
 import { RiFileUserFill } from 'react-icons/ri'
 import { headerNavItems } from './hedaerItems'
 import styles from './header.module.css'
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 const Header = () => {
+  let navigate = useNavigate()
   const [selectedItem, setSelectedItem] = useState()
   const clickedMenuItemHandler = (id) => {
     setSelectedItem(id)
@@ -52,16 +54,22 @@ const Header = () => {
           </ul>
         </div>
         <div className={`${styles.left_side__container} d-flex`}>
-          <div className='d-flex align-items-center mx-3'>
+          <div
+            className='d-flex align-items-center mx-3'
+            onClick={() => navigate('/visit-form')}
+          >
             <RiFileUserFill size={17} color='#A7ACBB' />
             <p className='p-0 m-0 px-2' style={{ color: ' #7C7E81' }}>
-              اکرم مکرم
+              فرم بازدید
             </p>
           </div>
-          <div className='d-flex align-items-center'>
+          <div
+            className='d-flex align-items-center'
+            onClick={() => navigate('/login')}
+          >
             <BiExit size={17} color='#A7ACBB' />
             <p className='p-0 m-0 px-2' style={{ color: ' #7C7E81' }}>
-              خروج
+              ورود
             </p>
           </div>
         </div>

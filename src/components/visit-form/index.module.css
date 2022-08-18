@@ -16,3 +16,10 @@
   background-color: #ed731c;
   box-shadow: none !important;
 }
+.back_button {
+  cursor: pointer;
+  font-size: 12px !important;
+}
+.back_button:hover {
+  color: cornflowerblue;
+}
