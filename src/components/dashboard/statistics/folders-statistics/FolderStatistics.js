@@ -32,7 +32,7 @@ const FolderStatistics = () => {
                   <div className='d-flex align-items-center mt-3' key={index}>
                     <img src={option.icon} alt='logo' width={23} />
                     <p className={`${styles.title_configs} px-4 m-0 p-0`}>
-                      336
+                      {option.code}
                     </p>
                     <p className={`${styles.title_text_configs} m-0 p-0`}>
                       {`پرونده  ${option.title}`}

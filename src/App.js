@@ -1,10 +1,10 @@
 import './App.css'
 import 'react-toastify/dist/ReactToastify.css'
 
-import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import Dashboard from '../src/components/dashboard'
-import Login from './components/authentication/Login'
+import Login from './components/authentication/login'
 import PrivateRoute from './router/PrivateRoute'
 import { ToastContainer } from 'react-toastify'
 import VisitForm from './components/visit-form'
@@ -20,7 +20,6 @@ function App() {
             <Route exact path='/visit-form' element={<VisitForm />} />
           </Route>
           <Route path='*' element={<Login />} />
-          {/* <PrivateRoute path='/visit-form' element={<VisitForm />} /> */}
         </Routes>
       </BrowserRouter>
       <ToastContainer rtl={true} />

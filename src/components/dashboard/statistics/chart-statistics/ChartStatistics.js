@@ -12,12 +12,10 @@ const ChartStatistics = () => {
   let values = Array.from({ length: 30 }, (key, i) =>
     Math.floor(Math.random() * 300)
   )
-  //   Chart.defaults.global.legend.display = false
   const data = {
     labels: days,
     datasets: [
       {
-        label: 'xxx',
         data: values,
         fill: true,
         backgroundColor: 'rgba(75,192,192,0.2)',
@@ -32,14 +30,6 @@ const ChartStatistics = () => {
         display: false,
       },
     },
-
-    yAxes: [
-      {
-        gridLines: {
-          display: false,
-        },
-      },
-    ],
   }
 
   return (

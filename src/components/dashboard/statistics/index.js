@@ -1,7 +1,6 @@
-import { Card, Col, Row } from 'reactstrap'
-
-import ChartStatistics from './chart-statistics/ChartStatistics'
-import FolderStatistics from './folders-statistics/FolderStatistics'
+import ChartStatistics from './chart-statistics/chartStatistics'
+import FolderStatistics from './folders-statistics/folderStatistics'
+import { Row } from 'reactstrap'
 
 const Statistics = () => {
   return (

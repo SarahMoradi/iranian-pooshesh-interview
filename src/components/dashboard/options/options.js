@@ -14,15 +14,7 @@ const Options = () => {
                 <Col sm='6' md='4' lg='3' key={index}>
                   <div className='d-flex flex-column align-items-center justify-content-center p-4 '>
                     <div
-                      className={`${
-                        option.defaultTheme === 'lightPink'
-                          ? styles.light_pink__container
-                          : option.defaultTheme === 'lightPurple'
-                          ? styles.light_purple__container
-                          : option.defaultTheme === 'lightGreen'
-                          ? styles.light_green__container
-                          : styles.light_orange__container
-                      } d-flex justify-content-center`}
+                      className={`${styles[option.defaultTheme + '__container']} d-flex justify-content-center`}
                     >
                       <img src={option.icon} alt='logo' width={25} />
                     </div>

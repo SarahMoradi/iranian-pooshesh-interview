@@ -2,7 +2,6 @@ import {
   Button,
   Card,
   Col,
-  FormFeedback,
   FormGroup,
   Input,
   InputGroup,
@@ -16,7 +15,6 @@ import { useEffect, useState } from 'react'
 import { IoArrowBackOutline } from 'react-icons/io5'
 import styles from './index.module.css'
 import { toast } from 'react-toastify'
-import { tr } from 'date-fns/locale'
 import { useNavigate } from 'react-router-dom'
 
 const VisitForm = () => {
@@ -44,19 +42,29 @@ const VisitForm = () => {
   }, [])
 
   const submitFormHandler = () => {
-    formApi(inputValues)
-      .then((res) => {
-        if (res.status === 200 || res.status === 201) {
-          toast.success('اطلاعات با موفقیت ذخیره گردید', {
+    if (inputValues.amount_damages_assessed < 100000000) {
+      toast.error('مبلغ خسارت نمیتواند زیر ۱۰ میلیون تومان باشد', {
+        position: toast.POSITION.TOP_LEFT,
+      })
+    } else if (inputValues.covered_distance > 30) {
+      toast.error('مسافت طی شده نمیتواند بیشتر از ۳۰ کیلومتر باشد', {
+        position: toast.POSITION.TOP_LEFT,
+      })
+    } else {
+      formApi(inputValues)
+        .then((res) => {
+          if (res.status === 200 || res.status === 201) {
+            toast.success('اطلاعات با موفقیت ذخیره گردید', {
+              position: toast.POSITION.TOP_LEFT,
+            })
+          }
+        })
+        .catch((err) =>
+          toast.error('ذخیره اطلاعات با خطا مواجه شد', {
             position: toast.POSITION.TOP_LEFT,
           })
-        }
-      })
-      .catch((err) =>
-        toast.error('ذخیره اطلاعات با خطا مواجه شد', {
-          position: toast.POSITION.TOP_LEFT,
-        })
-      )
+        )
+    }
   }
 
   return (
@@ -80,7 +88,7 @@ const VisitForm = () => {
                     <Label for='branch'>شعبه ایرانیان پوشش*</Label>
                     <Input
                       className={`${
-                        inputValues.branch === '' && styles.invalid_input
+                        !inputValues.branch && styles.invalid_input
                       }`}
                       required
                       id='branch'
@@ -104,7 +112,7 @@ const VisitForm = () => {
                     <Label for='adjuster'>کارشناس*</Label>
                     <Input
                       className={`${
-                        inputValues.adjuster === '' && styles.invalid_input
+                        !inputValues.adjuster && styles.invalid_input
                       }`}
                       required
                       id='adjuster'
@@ -131,7 +139,8 @@ const VisitForm = () => {
                     <InputGroupText>ریال </InputGroupText>
                     <Input
                       className={`${
-                        inputValues.amount_damages_assessed < 10000000 &&
+                        (!inputValues.amount_damages_assessed ||
+                          inputValues.amount_damages_assessed < 100000000) &&
                         styles.invalid_input
                       }`}
                       required
@@ -149,7 +158,7 @@ const VisitForm = () => {
                     <Label for='visit_date'>تاریخ*</Label>
                     <Input
                       className={`${
-                        inputValues.visit_date === '' && styles.invalid_input
+                        !inputValues.visit_date && styles.invalid_input
                       }`}
                       required
                       style={{ direction: 'rtl' }}
@@ -165,7 +174,7 @@ const VisitForm = () => {
                     <Label for='visit_time'>ساعت*</Label>
                     <Input
                       className={`${
-                        inputValues.visit_date === '' && styles.invalid_input
+                        !inputValues.visit_date && styles.invalid_input
                       }`}
                       required
                       id='visit_time'
@@ -186,7 +195,8 @@ const VisitForm = () => {
                     <InputGroupText>km</InputGroupText>
                     <Input
                       className={`${
-                        inputValues.covered_distance > 30 &&
+                        (!inputValues.covered_distance ||
+                          inputValues.covered_distance > 30) &&
                         styles.invalid_input
                       }`}
                       required
@@ -203,9 +213,6 @@ const VisitForm = () => {
                   <FormGroup>
                     <Label for='description'>توضیحات*</Label>
                     <Input
-                      className={`${
-                        inputValues.description === '' && styles.invalid_input
-                      }`}
                       required
                       id='description'
                       name='description'

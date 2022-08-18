@@ -1,4 +1,4 @@
-import Header from './header/Hedaer'
+import Header from './header/header'
 import Options from './options/options'
 import Statistics from './statistics'
 import styles from './index.module.css'

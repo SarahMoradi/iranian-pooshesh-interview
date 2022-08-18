@@ -1,6 +1,6 @@
 import { BiExit } from 'react-icons/bi'
 import { RiFileUserFill } from 'react-icons/ri'
-import { headerNavItems } from './hedaerItems'
+import { headerNavItems } from './headerItems'
 import styles from './header.module.css'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'

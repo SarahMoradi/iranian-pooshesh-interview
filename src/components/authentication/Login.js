@@ -23,7 +23,7 @@ const Login = () => {
   }
 
   const ResponseHandler = (res) => {
-    if (res.status === 200) {
+    if (res.status === 200 || res.status === 201) {
       toast.success('با موفقیت وارد شدید', {
         position: toast.POSITION.TOP_LEFT,
       })
