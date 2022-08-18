@@ -9,9 +9,9 @@ const Options = () => {
       <Col sm='11'>
         <Card className={`${styles.options_card__container} mt-5`}>
           <Row>
-            {optionItems.map((option) => {
+            {optionItems.map((option, index) => {
               return (
-                <Col sm='6' md='4' lg='3'>
+                <Col sm='6' md='4' lg='3' key={index}>
                   <div className='d-flex flex-column align-items-center justify-content-center p-4 '>
                     <div
                       className={`${

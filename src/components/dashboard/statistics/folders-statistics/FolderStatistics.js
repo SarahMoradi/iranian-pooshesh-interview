@@ -27,9 +27,9 @@ const FolderStatistics = () => {
             </div>
 
             <div className={`${styles.folder_option__container} my-4 px-3`}>
-              {optionItems.map((option) => {
+              {optionItems.map((option, index) => {
                 return (
-                  <div className='d-flex align-items-center mt-3'>
+                  <div className='d-flex align-items-center mt-3' key={index}>
                     <img src={option.icon} alt='logo' width={23} />
                     <p className={`${styles.title_configs} px-4 m-0 p-0`}>
                       336

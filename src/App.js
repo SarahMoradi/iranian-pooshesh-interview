@@ -4,7 +4,6 @@ import 'react-toastify/dist/ReactToastify.css'
 import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
 
 import Dashboard from '../src/components/dashboard'
-import { Fragment } from 'react'
 import Login from './components/authentication/Login'
 import PrivateRoute from './router/PrivateRoute'
 import { ToastContainer } from 'react-toastify'
@@ -15,9 +14,13 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Dashboard />} />
+          <Route path='/' element={<Dashboard />} exact />
           <Route path='/login' element={<Login />} />
-          <Route path='/visit-form' element={<VisitForm />} />
+          <Route exact path='/visit-form' element={<PrivateRoute />}>
+            <Route exact path='/visit-form' element={<VisitForm />} />
+          </Route>
+          <Route path='*' element={<Login />} />
+          {/* <PrivateRoute path='/visit-form' element={<VisitForm />} /> */}
         </Routes>
       </BrowserRouter>
       <ToastContainer rtl={true} />

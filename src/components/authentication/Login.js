@@ -27,8 +27,9 @@ const Login = () => {
       toast.success('با موفقیت وارد شدید', {
         position: toast.POSITION.TOP_LEFT,
       })
-      localStorage.setItem('access', res.data?.access)
-      localStorage.setItem('refresh', res.data?.refresh)
+      localStorage.setItem('access_token', res.data?.access)
+      localStorage.setItem('refresh_token', res.data?.refresh)
+      localStorage.setItem('auth', true)
       navigate('/visit-form')
     }
   }
