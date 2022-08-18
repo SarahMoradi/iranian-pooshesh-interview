@@ -1,0 +1,18 @@
+.visit_form__container {
+  direction: rtl;
+}
+.submit_button {
+  background-color: #fa8735;
+  color: #fff;
+  border: none !important;
+  height: 48px;
+  border: none !important;
+}
+.submit_button:focus {
+  background-color: #fa8735;
+  box-shadow: none !important;
+}
+.submit_button:hover {
+  background-color: #ed731c;
+  box-shadow: none !important;
+}

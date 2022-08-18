@@ -5,9 +5,11 @@ import { HiLockClosed } from 'react-icons/hi'
 import { LoginApi } from '../../api/authentication/loginApi'
 import styles from './auth.module.css'
 import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 const Login = () => {
+  let navigate = useNavigate()
   const [loginData, setLoginData] = useState({
     username: '',
     password: '',
@@ -27,6 +29,7 @@ const Login = () => {
       })
       localStorage.setItem('access', res.data?.access)
       localStorage.setItem('refresh', res.data?.refresh)
+      navigate('/visit-form')
     }
   }
   const submitButtonHandler = () => {
