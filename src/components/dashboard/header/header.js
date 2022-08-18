@@ -55,7 +55,7 @@ const Header = () => {
         </div>
         <div className={`${styles.left_side__container} d-flex`}>
           <div
-            className='d-flex align-items-center mx-3'
+            className={`${styles.navbar_link__container} d-flex align-items-center mx-3`}
             onClick={() => navigate('/visit-form')}
           >
             <RiFileUserFill size={17} color='#A7ACBB' />
@@ -64,7 +64,7 @@ const Header = () => {
             </p>
           </div>
           <div
-            className='d-flex align-items-center'
+            className={`${styles.navbar_link__container} d-flex align-items-center`}
             onClick={() => navigate('/login')}
           >
             <BiExit size={17} color='#A7ACBB' />

@@ -34,3 +34,9 @@ li span svg {
 .right_side__container {
   display: flex;
 }
+.navbar_link__container {
+  cursor: pointer;
+}
+.navbar_link__container > p:hover {
+  color: cornflowerblue !important;
+}

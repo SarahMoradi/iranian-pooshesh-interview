@@ -161,6 +161,7 @@ const VisitForm = () => {
                         !inputValues.visit_date && styles.invalid_input
                       }`}
                       required
+                      bsSize='sm'
                       style={{ direction: 'rtl' }}
                       id='visit_date'
                       name='visit_date'
@@ -180,6 +181,7 @@ const VisitForm = () => {
                       id='visit_time'
                       name='visit_time'
                       type='time'
+                      bsSize='sm'
                       onChange={(event) => infoChangeInputsHandler(event)}
                     />
                   </FormGroup>
