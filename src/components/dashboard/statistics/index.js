@@ -1,17 +1,12 @@
 import { Card, Col, Row } from 'reactstrap'
 
+import ChartStatistics from './chart-statistics/ChartStatistics'
 import FolderStatistics from './folders-statistics/FolderStatistics'
 
 const Statistics = () => {
   return (
     <Row className='w-100 d-flex justify-content-center mt-4'>
-      <Col sm='11' md='11' lg='7'>
-        <Card>
-          <Row>
-            <Col sm='12'>test</Col>
-          </Row>
-        </Card>
-      </Col>
+      <ChartStatistics />
       <FolderStatistics />
     </Row>
   )

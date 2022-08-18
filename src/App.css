@@ -8,6 +8,7 @@ body {
   box-sizing: border-box;
   font-family: 'B-yekan';
   font-size: 13px;
+  overflow-x: hidden;
 }
 input::placeholder {
   font-size: 10px !important;
