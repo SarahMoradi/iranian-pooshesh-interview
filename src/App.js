@@ -6,12 +6,14 @@ import Login from './components/authentication/Login'
 import PrivateRoute from './router/PrivateRoute'
 import { Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
+import VisitForm from './components/visit-form'
 
 function App() {
   return (
     <div className='App'>
       {/* <Login /> */}
-      <Dashboard />
+      {/* <Dashboard /> */}
+      <VisitForm />
       <ToastContainer rtl={true} />
     </div>
   )

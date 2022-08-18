@@ -5,7 +5,7 @@ import FolderStatistics from './folders-statistics/FolderStatistics'
 
 const Statistics = () => {
   return (
-    <Row className='w-100 d-flex justify-content-center mt-4'>
+    <Row className='w-100 d-flex justify-content-center my-4'>
       <ChartStatistics />
       <FolderStatistics />
     </Row>

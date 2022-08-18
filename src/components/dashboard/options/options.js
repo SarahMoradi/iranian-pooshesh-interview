@@ -12,7 +12,7 @@ const Options = () => {
             {optionItems.map((option) => {
               return (
                 <Col sm='6' md='4' lg='3'>
-                  <div className='d-flex flex-column align-items-center justify-content-center p-4'>
+                  <div className='d-flex flex-column align-items-center justify-content-center p-4 '>
                     <div
                       className={`${
                         option.defaultTheme === 'lightPink'
@@ -27,7 +27,7 @@ const Options = () => {
                       <img src={option.icon} alt='logo' width={25} />
                     </div>
                     <div className='mt-3'>
-                      <p>{option.title}</p>
+                      <p className='text-center'>{option.title}</p>
                     </div>
                   </div>
                 </Col>

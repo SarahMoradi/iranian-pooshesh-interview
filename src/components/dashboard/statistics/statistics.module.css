@@ -2,7 +2,12 @@
   border: none !important;
   box-shadow: 0px 4px 0px 0px #efeeee40;
   direction: rtl;
-  font-size: 12px;
+}
+.chart_statistics__container {
+  border: none !important;
+  box-shadow: 0px 4px 0px 0px #efeeee40;
+  direction: rtl;
+  position: relative;
 }
 .date_container p {
   margin: 0 27px !important;
@@ -19,4 +24,7 @@
 .title_text_configs {
   color: #a7acbb;
   font-size: 12px;
+}
+.chart_container canvas {
+  height: 305px !important;
 }
