@@ -1,0 +1,22 @@
+.folder_statistics__container {
+  border: none !important;
+  box-shadow: 0px 4px 0px 0px #efeeee40;
+  direction: rtl;
+  font-size: 12px;
+}
+.date_container p {
+  margin: 0 27px !important;
+  padding: 3px 17px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  color: #a7acbb;
+  font-size: 11px;
+}
+.title_configs {
+  font-weight: bold;
+  font-size: 13px;
+}
+.title_text_configs {
+  color: #a7acbb;
+  font-size: 12px;
+}

@@ -11,3 +11,9 @@
   justify-content: center;
   align-items: center;
 }
+.statistics__container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}

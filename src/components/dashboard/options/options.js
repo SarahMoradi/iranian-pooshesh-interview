@@ -24,7 +24,7 @@ const Options = () => {
                           : styles.light_orange__container
                       } d-flex justify-content-center`}
                     >
-                      <img src={option.icon} alt='craeted' />
+                      <img src={option.icon} alt='logo' width={25} />
                     </div>
                     <div className='mt-3'>
                       <p>{option.title}</p>
