@@ -1,5 +1,5 @@
-import ChartStatistics from './chart-statistics/chartStatistics'
-import FolderStatistics from './folders-statistics/folderStatistics'
+import ChartStatistics from './chart-statistics/ChartStatistics'
+import FolderStatistics from './folders-statistics/FolderStatistics'
 import { Row } from 'reactstrap'
 
 const Statistics = () => {
